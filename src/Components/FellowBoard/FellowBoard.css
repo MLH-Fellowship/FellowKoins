@@ -8,9 +8,9 @@
   --light: #cad4e1;
   --lighter: #f5f8fc;
   --lightest: var(--white);
-  --primary: #7b16ff;
+  --primary: #3aba96;
   --primary-light: #ddd9ff;
-  --primary-trans: rgba(123, 22, 255, 0.4);
+  --primary-trans: rgba(27, 243, 142, 0.4);
   --yellow: #fdcb6e;
   --orange: #e17055;
   --teal: #00cec9;
@@ -40,6 +40,7 @@ a {
   transition: all 120ms ease-out 0s;
   display: inline-block;
   border-radius: 0.4rem;
+  margin: 5px;
 }
 a:hover {
   background: var(--primary-trans);

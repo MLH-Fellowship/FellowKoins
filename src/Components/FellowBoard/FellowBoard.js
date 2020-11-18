@@ -159,7 +159,7 @@ function FellowBoard() {
   return (
     <div>
       <h1 className="text-center">
-        <strong>FellowKoins</strong>
+        <strong>FellowBoard</strong>
       </h1>
       <div className="l-wrapper">
         <div className="l-grid">

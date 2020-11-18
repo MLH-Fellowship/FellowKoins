@@ -35,6 +35,10 @@ body {
   font-size: 2em;
 }
 
+.nav-item {
+  margin: 10px;
+}
+
 /* .logo {
   height: 250px;
   margin: auto !important;
