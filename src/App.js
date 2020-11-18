@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import FellowBoard from "./Components/FellowBoard/FellowBoard";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route exact path="/fellowboard" component={FellowBoard} />
           <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
+        <Footer />
       </Router>
     </>
   );
