@@ -50,22 +50,38 @@ function Navbar() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item active">
-                  <Link className="nav-link" to="/">
+                  <Link className="nav-link font-weight-bold" to="/">
                     Home <span className="sr-only">(current)</span>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/fellowboard">
+                  <Link className="nav-link font-weight-bold" to="/fellowboard">
                     FellowBoard
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/dashboard">
+                  <Link className="nav-link font-weight-bold" to="/dashboard">
                     DashBoard
                   </Link>
                 </li>
               </ul>
             </div>
+            <iframe
+              src="https://ghbtns.com/github-btn.html?user=MLH-Fellowship&repo=FellowKoins&type=star&count=true&size=large"
+              frameborder="0"
+              scrolling="0"
+              width="170"
+              height="30"
+              title="GitHub"
+            ></iframe>
+            <iframe
+              src="https://ghbtns.com/github-btn.html?user=MLH-Fellowship&repo=FellowKoins&type=fork&count=true&size=large"
+              frameborder="0"
+              scrolling="0"
+              width="170"
+              height="30"
+              title="GitHub"
+            ></iframe>
             <ThemeBox setMode={setMode} />
           </nav>
         </div>
