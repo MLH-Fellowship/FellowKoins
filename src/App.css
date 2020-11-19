@@ -63,3 +63,9 @@ a:hover {
   justify-content: center;
   margin-top: 20px !important;
 }
+
+.dashboard .card {
+  background-color: #3bb78f;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+  color: #fff;
+}
