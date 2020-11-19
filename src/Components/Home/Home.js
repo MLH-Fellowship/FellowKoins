@@ -10,7 +10,7 @@ function Home() {
         <div className="row">
           <div className="col-sm-6 col-lg-6 mt-5">
             <h1 className="text-center">
-              <strong>FellowKoins</strong>
+              <strong style={{ fontFamily: "Poppins" }}>FellowKoins</strong>
             </h1>
             <p className="mt-5">
               Want to do more with your open source contributions? Contribute
@@ -31,23 +31,25 @@ function Home() {
           </div>
           <div className="col-sm-6 col-lg-6 mt-5">
             <h3 className="text-center mt-5">
-              <strong>How to Earn FellowKoins ?</strong>
+              <strong style={{ fontFamily: "Poppins" }}>
+                How to Earn FellowKoins ?
+              </strong>
             </h3>
-            <p className="mt-3">
+            <p className="mt-3" style={{ fontFamily: "Poppins" }}>
               Earn FellowKoins by contributing to any valid{" "}
               <a href="https://github.com/MLH-Fellowship/">MLH Fellowship</a>{" "}
               GitHub Project Repo
             </p>
             <ul className="mt-3">
-              <li>
+              <li style={{ fontFamily: "Poppins" }}>
                 <span>💰</span> Earn <strong>+10</strong> FellowKoins when you
                 make a PR
               </li>
-              <li>
+              <li style={{ fontFamily: "Poppins" }}>
                 <span>💰</span> Earn <strong>+20</strong> FellowKoins when your
                 PR gets merged
               </li>
-              <li>
+              <li style={{ fontFamily: "Poppins" }}>
                 <span>💰</span> Earn <strong>+30</strong> FellowKoins when you
                 make an issue
               </li>
