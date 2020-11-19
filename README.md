@@ -14,6 +14,15 @@ Want to do more with your open source contributions? Contribute issues, feature 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://gitHub.com/MLH-Fellowship/FellowKoins/graphs/commit-activity)
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/MLH-Fellowship/FellowKoins/)
 
+## Themes & Features
+
+- [x] **Community Building** – Helps you know more about the fellows from other pods, find inspiration, collaborate and contribute to ace on the fellowboard!
+
+- [x] **Remote Work / Tooling** – Helps you keep track of your open source contributions and hackathon projects in the MLH Fellowship with stats directly on your dashboard
+
+- [x] **Showcase / Portfolio** – More Fellowkoins, more you build upon your enthusiasm to contribute to the fellowship. Showcase your contributions with this awesome virtual currency. (Maybe Redeem later for swags!)
+
+
 ## Links:
 
 - **Frontend**: [https://fellowkoins.netlify.app/](https://fellowkoins.netlify.app/)
@@ -40,7 +49,7 @@ Want to do more with your open source contributions? Contribute issues, feature 
 | S.No. | Branch Name                                                                   | Purpose                            |
 | ----- | ----------------------------------------------------------------------------- | ---------------------------------- |
 | 1.    | [master](https://github.com/MLH-Fellowship/FellowKoins/tree/main) | contains the frontend code             |
-| 2.    | [nlp](https://github.com/MLH-Fellowship/FellowKoins/tree/backend)       | contains all backend code |
+| 2.    | [backend](https://github.com/MLH-Fellowship/FellowKoins/tree/backend)       | contains all backend code |
 
 ### Setup
 
@@ -89,9 +98,6 @@ $ npm start
 | 2.    | Kshitij Kotasthane | Backend Developer  | [@kshitij86](https://github.com/kshitij86)           |
 | 3.    | Vignesh S          | ML                 | [@telescopic](https://github.com/telescopic)         |
 
-
-<br>
-<br>
 
 > See more about us here: [Fantastic Falcons](https://fantastic-falcons.netlify.app/)
 
