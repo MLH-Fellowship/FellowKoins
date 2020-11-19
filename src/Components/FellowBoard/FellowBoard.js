@@ -158,7 +158,7 @@ function FellowBoard() {
   }, []);
   return (
     <div className="fellowboard">
-      <h1 className="text-center">
+      <h1 className="text-center mt-5 mb-5">
         <strong>FellowBoard</strong>
       </h1>
       <div className="l-wrapper">

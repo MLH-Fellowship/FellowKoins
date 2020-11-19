@@ -12,7 +12,7 @@ function Home() {
             <h1 className="text-center">
               <strong>FellowKoins</strong>
             </h1>
-            <p className="mt-5 text-white">
+            <p className="mt-5">
               Want to do more with your open source contributions? Contribute
               issues, feature requests and PRs and earn FellowKoins and make
               your mark in the MLH Fellowship's FellowBoard. Redeem your points
@@ -33,12 +33,12 @@ function Home() {
             <h3 className="text-center mt-5">
               <strong>How to Earn FellowKoins ?</strong>
             </h3>
-            <p className="text-white mt-3">
+            <p className="mt-3">
               Earn FellowKoins by contributing to any valid{" "}
               <a href="https://github.com/MLH-Fellowship/">MLH Fellowship</a>{" "}
               GitHub Project Repo
             </p>
-            <ul className="mt-3 text-white">
+            <ul className="mt-3">
               <li>
                 <span>💰</span> Earn <strong>+10</strong> FellowKoins when you
                 make a PR
