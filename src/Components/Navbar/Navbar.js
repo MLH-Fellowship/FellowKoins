@@ -35,7 +35,11 @@ function Navbar() {
           >
             <p className="navbar-brand">
               <Link className="nav-link font-weight-bold" to="/">
-                <strong style={{ color: "black" }}>FellowKoins</strong>
+                <strong
+                  className={theme === "light" ? "text-dark" : "text-white"}
+                >
+                  FellowKoins
+                </strong>
               </Link>
             </p>
             <button
