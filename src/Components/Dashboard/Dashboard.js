@@ -1,71 +1,117 @@
 import React from "react";
 import DashboardLottie from "./DashboardLottie";
+import { getStats, getActivity } from "../../Api/api";
 
-function Dashboard() {
-  return (
-    <div>
-      <h1 className="text-center mt-5 mb-5">
-        <strong>Dashboard</strong>
-      </h1>
-      <div className="row mb-3 m-0 dashboard">
-        <div className="col-xl-3 col-lg-6">
-          <div className="card card-inverse">
-            <div className="card-block text-center">
-              <h6 className="text-uppercase font-weight-bold ">FellowKoins</h6>
-              <h1 className="display-1 font-weight-bold">500</h1>
+export default class Dashboard extends React.Component {
+  state = {
+    stats: "",
+    activity: [],
+  };
+  async componentDidMount() {
+    const statsData = await getStats("kshitij86", "react-native");
+    const activityData = await getActivity("kshitij86", "react-native");
+    this.setState({ stats: statsData, activity: activityData });
+    console.log(this.state.stats);
+    console.log(this.state.activity);
+
+    this.state.activity.forEach(async (act, index) => {
+      const list = document.getElementsByClassName(
+        "list-group list-group-flush"
+      )[0];
+      let newRow = document.createElement("li");
+      newRow.classList = "list-group-item";
+      newRow.innerHTML = `<img src="https://img.icons8.com/fluent-systems-filled/24/000000/pull-request.png"/><a href="${act.pr_url}" target="_blank">${act.pr_title}</a>`;
+      list.appendChild(newRow);
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h1 className="text-center mt-5 mb-5">
+          <strong style={{ fontFamily: "Poppins" }}>Dashboard</strong>
+        </h1>
+        <div className="row mb-3 m-0 dashboard">
+          <div className="col-xl-3 col-lg-6">
+            <div className="card card-inverse">
+              <div className="card-block text-center">
+                <h6
+                  className="text-uppercase font-weight-bold "
+                  style={{ fontFamily: "Poppins" }}
+                >
+                  FellowKoins
+                </h6>
+                <h1 className="display-1 font-weight-bold">
+                  {this.state.stats.fcoins}
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-6">
+            <div className="card card-inverse">
+              <div className="card-block text-center">
+                <h6
+                  className="text-uppercase font-weight-bold"
+                  style={{ fontFamily: "Poppins" }}
+                >
+                  Pull Requests Made
+                </h6>
+                <h1 className="display-1 font-weight-bold">
+                  {this.state.stats.pull_requests}
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-6">
+            <div className="card card-inverse">
+              <div className="card-block text-center">
+                <h6
+                  className="text-uppercase font-weight-bold"
+                  style={{ fontFamily: "Poppins" }}
+                >
+                  Pull Requests Merged
+                </h6>
+                <h1 className="display-1 font-weight-bold">6</h1>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-6">
+            <div className="card card-inverse">
+              <div className="card-block text-center ">
+                <h6
+                  className="text-uppercase font-weight-bold"
+                  style={{ fontFamily: "Poppins" }}
+                >
+                  Issues Raised
+                </h6>
+                <h1 className="display-1 font-weight-bold">3</h1>
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-xl-3 col-lg-6">
-          <div className="card card-inverse">
-            <div className="card-block text-center">
-              <h6 className="text-uppercase font-weight-bold">
-                Pull Requests Made
-              </h6>
-              <h1 className="display-1 font-weight-bold">10</h1>
+        <h1 className="text-center mt-5 mb-5">
+          <strong style={{ fontFamily: "Poppins" }}>
+            Your recent Activity
+          </strong>
+        </h1>
+        <div className="container">
+          <div className="row mt-5 mb-5">
+            <div className="col-md-6">
+              <div className="card">
+                {this.state.activity.length === 0 ? (
+                  <h6 style={{ fontFamily: "Poppins", alignContent: "center" }}>
+                    Fetching your contributions...{" "}
+                  </h6>
+                ) : (
+                  <ul className="list-group list-group-flush"></ul>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="col-xl-3 col-lg-6">
-          <div className="card card-inverse">
-            <div className="card-block text-center">
-              <h6 className="text-uppercase font-weight-bold">
-                Pull Requests Merged
-              </h6>
-              <h1 className="display-1 font-weight-bold">6</h1>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-3 col-lg-6">
-          <div className="card card-inverse">
-            <div className="card-block text-center ">
-              <h6 className="text-uppercase font-weight-bold">Issues Raised</h6>
-              <h1 className="display-1 font-weight-bold">3</h1>
+            <div className="col-md-6">
+              <DashboardLottie />
             </div>
           </div>
         </div>
       </div>
-      <h1 className="text-center mt-5 mb-5">
-        <strong>Recent Activity</strong>
-      </h1>
-      <div className="container">
-        <div className="row mt-5 mb-5">
-          <div className="col-md-6">
-            <div className="card">
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Cras justo odio</li>
-                <li className="list-group-item">Dapibus ac facilisis in</li>
-                <li className="list-group-item">Vestibulum at eros</li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <DashboardLottie />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
 }
-
-export default Dashboard;

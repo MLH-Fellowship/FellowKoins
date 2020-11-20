@@ -1,15 +1,36 @@
-const fetch = require("node-fetch");
+import { create } from "apisauce";
+
+let apiData = null;
+
+const api = create({
+  baseURL: "https://fcoin-backend.herokuapp.com",
+});
 
 export const getRanks = async () => {
   let rankList = [];
-  const apiData = await fetch("https://fcoin-backend.herokuapp.com/ranks");
-  const userList = await apiData.json();
+  apiData = await api.get("/ranks");
+  const userList = await apiData.data;
   userList.map(async (user) => {
-        rankList.push({
+    rankList.push({
       handle: user,
-      //   img: avatarUrl.avatar_url,
     });
   });
 
   return rankList;
+};
+
+export const getStats = async (user, project) => {
+  apiData = await api.post("/stats", {
+    user_name: user,
+    project: project,
+  });
+  return apiData.data;
+};
+
+export const getActivity = async (user, project) => {
+  apiData = await api.post("/activity", {
+    user_name: user,
+    project: project,
+  });
+  return apiData.data.activity;
 };
