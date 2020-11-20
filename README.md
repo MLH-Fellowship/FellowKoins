@@ -1,6 +1,6 @@
 <div align="center"><img align="center" src="https://user-images.githubusercontent.com/42115530/99636339-4b686e80-2a69-11eb-9f44-528bd1bedccd.gif" alt="fellowkoins" height='250' width='250'/></div>
 
-# FellowKoins
+# FellowKoins!
 
 Want to do more with your open source contributions? Contribute issues, feature requests and PRs and earn [**FellowKoins**](https://fellowkoins.netlify.app/) and make your mark in the MLH Fellowship's FellowBoard. Redeem your points later and celebrate the triumph and glee of being an open source contributor at MLH Fellowship.
 
