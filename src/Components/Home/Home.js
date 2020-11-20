@@ -12,6 +12,9 @@ function Home() {
             <h1 className="text-center">
               <strong style={{ fontFamily: "Poppins" }}>FellowKoins</strong>
             </h1>
+            <h5 className="text-center">
+              Elevate your fellowship experience !
+            </h5>
             <p className="mt-5">
               Want to do more with your open source contributions? Contribute
               issues, feature requests and PRs and earn FellowKoins and make

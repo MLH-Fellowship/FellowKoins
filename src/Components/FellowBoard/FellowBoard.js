@@ -40,6 +40,7 @@ export default class FellowBoard extends React.Component {
 			<div class="u-text--right c-kudos">
             <div class="u-mt--8">
                 ${user.pr_count}
+                <i class="fas fa-code-branch m-1"></i>
             </div>
             <div class="u-mt--8">
 					${randomEmoji()}
