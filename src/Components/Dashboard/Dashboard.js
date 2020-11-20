@@ -7,12 +7,18 @@ export default class Dashboard extends React.Component {
     stats: "",
     activity: [],
   };
+
   async componentDidMount() {
-    const statsData = await getStats("kshitij86", "react-native");
-    const activityData = await getActivity("kshitij86", "react-native");
+    // console.log(this.props.location.state.user_name);
+    const statsData = await getStats(
+      this.props.location.state.user_name.toString(),
+      this.props.location.state.project.toString()
+    );
+    const activityData = await getActivity(
+      this.props.location.state.user_name.toString(),
+      this.props.location.state.project.toString()
+    );
     this.setState({ stats: statsData, activity: activityData });
-    console.log(this.state.stats);
-    console.log(this.state.activity);
 
     this.state.activity.forEach(async (act, index) => {
       const list = document.getElementsByClassName(
@@ -28,7 +34,9 @@ export default class Dashboard extends React.Component {
     return (
       <div>
         <h1 className="text-center mt-5 mb-5">
-          <strong style={{ fontFamily: "Poppins" }}>Dashboard</strong>
+          <strong style={{ fontFamily: "Poppins" }}>
+            Hi, {`${this.props.location.state.user_name}`}
+          </strong>
         </h1>
         <div className="row mb-3 m-0 dashboard">
           <div className="col-xl-3 col-lg-6">
@@ -98,7 +106,13 @@ export default class Dashboard extends React.Component {
             <div className="col-md-6">
               <div className="card">
                 {this.state.activity.length === 0 ? (
-                  <h6 style={{ fontFamily: "Poppins", alignContent: "center" }}>
+                  <h6
+                    style={{
+                      fontFamily: "Poppins",
+                      alignContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
                     Fetching your contributions...{" "}
                   </h6>
                 ) : (

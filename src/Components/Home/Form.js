@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Form() {
+  const [userName, setUserName] = useState("");
+  const [project, setProject] = useState("");
+  const handleUserName = (e) => {
+    if (e.target.value !== "") {
+      setUserName(e.target.value);
+    }
+  };
+  const handleProject = (e) => {
+    if (e.target.value !== "") {
+      setProject(e.target.value);
+    }
+  };
   return (
     <>
       <form method="post" style={{ marginTop: "80px" }}>
@@ -22,6 +35,7 @@ function Form() {
                 id="validationTooltipUsername"
                 placeholder="GitHub Username"
                 aria-describedby="validationTooltipUsernamePrepend"
+                onChange={handleUserName}
                 required
               />
               <div class="invalid-tooltip">
@@ -36,14 +50,22 @@ function Form() {
               class="form-control"
               id="validationTooltip01"
               placeholder="Project Repo Name"
+              onChange={handleProject}
               required
             />
             <div class="valid-tooltip">Looks good!</div>
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">
-          Get FellowKoins
-        </button>
+        <Link
+          to={{
+            pathname: "/dashboard",
+            state: { user_name: userName, project: project },
+          }}
+        >
+          <button class="btn btn-primary" type="submit">
+            Get FellowKoins
+          </button>
+        </Link>
       </form>
     </>
   );

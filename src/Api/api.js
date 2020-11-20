@@ -12,7 +12,8 @@ export const getRanks = async () => {
   const userList = await apiData.data;
   userList.map(async (user) => {
     rankList.push({
-      handle: user,
+      handle: user.user_name,
+      pr_count: user.pr_count,
     });
   });
 

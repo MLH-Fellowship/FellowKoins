@@ -38,21 +38,24 @@ export default class FellowBoard extends React.Component {
 				</div>
 			</div>
 			<div class="u-text--right c-kudos">
-				<div class="u-mt--8">
+            <div class="u-mt--8">
+                ${user.pr_count}
+            </div>
+            <div class="u-mt--8">
 					${randomEmoji()}
 				</div>
 			</div>
 		</div>
 	`;
-      if (user.rank === 1) {
+      if (index + 1 === 1) {
         newRow.querySelector(".c-place").classList.add("u-text--dark");
         newRow.querySelector(".c-place").classList.add("u-bg--yellow");
         newRow.querySelector(".c-kudos").classList.add("u-text--yellow");
-      } else if (user.rank === 2) {
+      } else if (index + 1 === 2) {
         newRow.querySelector(".c-place").classList.add("u-text--dark");
         newRow.querySelector(".c-place").classList.add("u-bg--teal");
         newRow.querySelector(".c-kudos").classList.add("u-text--teal");
-      } else if (user.rank === 3) {
+      } else if (index + 1 === 3) {
         newRow.querySelector(".c-place").classList.add("u-text--dark");
         newRow.querySelector(".c-place").classList.add("u-bg--orange");
         newRow.querySelector(".c-kudos").classList.add("u-text--orange");
@@ -98,6 +101,11 @@ export default class FellowBoard extends React.Component {
                         <div className="u-text--left u-text--small u-text--medium">
                           Fellow
                         </div>
+                        {this.state.team.length === 0 ? (
+                          <div className="u-text--left u-text--small u-text--medium">
+                            Getting fellows...
+                          </div>
+                        ) : null}
                         {/* <div className="u-text--right u-text--small u-text--medium">
                           FellowKoins
                         </div> */}

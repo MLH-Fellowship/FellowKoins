@@ -34,7 +34,9 @@ function Navbar() {
             }
           >
             <p className="navbar-brand">
-              <strong>FellowKoins</strong>
+              <Link className="nav-link font-weight-bold" to="/">
+                <strong style={{ color: "black" }}>FellowKoins</strong>
+              </Link>
             </p>
             <button
               className="navbar-toggler"
@@ -49,21 +51,16 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
-                <li className="nav-item active">
-                  <Link className="nav-link font-weight-bold" to="/">
-                    Home <span className="sr-only">(current)</span>
-                  </Link>
-                </li>
                 <li className="nav-item">
                   <Link className="nav-link font-weight-bold" to="/fellowboard">
                     FellowBoard
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link font-weight-bold" to="/dashboard">
                     DashBoard
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             <iframe
